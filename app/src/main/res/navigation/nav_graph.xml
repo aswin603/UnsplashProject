@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/postFragment">
+
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.aswin.project.unsplashproject.ui.post.PostFragment"
+        android:label="Photo"
+        tools:layout="@layout/fragment_post">
+        <action
+            android:id="@+id/action_postFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+        <action
+            android:id="@+id/action_postFragment_to_profileFragment4"
+            app:destination="@id/profileFragment4" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.aswin.project.unsplashproject.ui.details.ImageFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_image">
+        <argument
+            android:name="image"
+            app:argType="com.aswin.project.unsplashproject.data.UnsplashPhoto" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment4"
+        android:name="com.aswin.project.unsplashproject.ui.details.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+        <argument
+            android:name="profile"
+            app:argType="com.aswin.project.unsplashproject.data.UnsplashPhoto" />
+    </fragment>
+</navigation>
